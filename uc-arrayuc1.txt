@@ -1,0 +1,21 @@
+#!/bin/bash -x
+
+counter=0
+Numbers[((counter++))]="100"
+Numbers[((counter++))]="200"
+Numbers[((counter++))]="300"
+Numbers[((counter++))]="400"
+Numbers[((counter++))]="500"
+Numbers[((counter++))]="600"
+Numbers[((counter++))]="700"
+Numbers[((counter++))]="800"
+Numbers[((counter++))]="900"
+Numbers[((counter++))]="1000"
+
+echo '{200[@]}'
+echo '{900[@]}'
+echo ${Numbers[@]}
+
+secondGreatest=$(printf '%s\n' "${array[@]}" | sort -n | tail -1000 | head -100)
+
+echo '{secondGreatest[@]}'
